@@ -1,0 +1,83 @@
+This is the brief for this Test Driven Development (TDD) exercise
+
+The commentary and walkthrough can be found [here](http://blog.darrenbishop.com)
+
+
+PROBLEM: Battleships
+
+A number of battleships are situated in an area of the ocean. This area, which is rectangular, has come under attack with missiles being fired at the battleships.
+
+Each battleship's position and location is represented by a combination of x and y co-ordinates, its length and a letter representing one of the four cardinal compass points. The ocean area is divided up into a grid to simplify location. An example position might be A, 0, 0, 2, N, which means that battleship A is in the bottom left corner, occupies 2 grid positions and is facing North, so it occupies 0,0 and 0,1.
+
+In order to attack the battleships, a series of shots are fired, each specified by a x and y coordinate.
+
+If a shot is made to a position occupied by a battleship, this is considered a hit, otherwise a miss. In order to sink a battleship, all of the grid positions occupied by the battleship must be hit.
+
+INPUT:
+The first line of input is the upper-right coordinates of the ocean area, the lower-left coordinates are assumed to be 0,0.
+
+The second line of input is the number of battleships (x), which is then followed by x lines of input giving each battleship's position in turn.
+ 
+Battleship positions are made up of a letter, three integers and a letter separated by spaces, corresponding to its name, the x and y co-ordinates, the length and the battleship's orientation.
+
+The rest of the input is information pertaining to the shots being fired at the battleships.
+
+Each shot is made up of two integers , corresponding to the x and y co-ordinates.
+
+OUTPUT:
+The output for each battleship should be its condition, whether it has been sunk, been partially hit, or survived.
+
+Test Scenario 1:
+
+Input:
+6 6
+1
+A 3 1 2 E
+0 0
+3 0
+3 1
+4 1
+
+Expected output:
+A - Sunk
+
+Test Scenario 2:
+
+Input:
+6 6
+2
+A 3 1 2 E
+B 0 0 3 N
+0 0
+3 0
+3 1
+0 2
+
+Expected output:
+A - 1 of 2 Hit
+B - 2 of 3 Hit
+
+Test Scenario 3:
+
+Input:
+6 6
+3
+A 3 1 2 E
+B 0 0 3 N
+C 0 4 1 W
+0 0
+3 0
+3 1
+0 2
+
+Expected output:
+A - 1 of 2 Hit
+B - 2 of 3 Hit
+C - Survived
+
+SUBMISSION:
+Your solution should be written using Java 6 and should depend on no external libraries other than JUnit and Mockito.
+When run, the main class should accept a file path as an input argument. The file will consist of one test scenario. The output should be a file named results-TIMESTAMP.txt
+
+
+
